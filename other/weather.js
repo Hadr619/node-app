@@ -8,7 +8,7 @@ function printWeather(weather) {
   console.log(message);
 }
 
-function get(query, state){
+function get(query){
 const request = 
 https.get(`https://api.wunderground.com/api/${api.key}/geolookup/conditions/q/${query}.json`, response => {
                           let body = "";
@@ -21,8 +21,7 @@ https.get(`https://api.wunderground.com/api/${api.key}/geolookup/conditions/q/${
                             // Parse the data
                             const weather = JSON.parse(body);                            
                             // Print the data
-                            //printWeather(weather)
-                            console.log(query);
+                            printWeather(weather)
                           });
                           
                           
